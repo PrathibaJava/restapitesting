@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.testing.restapi.model.Library;
 
-public interface LibraryRepository extends JpaRepository<Library, String> {
+public interface LibraryRepository extends JpaRepository<Library, String>, CustomRepository {
 
 }
