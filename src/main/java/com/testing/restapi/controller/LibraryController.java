@@ -72,7 +72,7 @@ public class LibraryController {
 	@PutMapping("/books/{id}")
 	public ResponseEntity<Library> updateBook(@RequestBody Library library, @PathVariable(value = "id") String id) {
 
-		Library existingBook = repository.findById(id).get();
+		Library existingBook = libraryService.findBookById(id);
 		existingBook.setAisle(library.getAisle());
 		existingBook.setAuthor(library.getAuthor());
 		existingBook.setBook_name(library.getBook_name());
@@ -82,7 +82,7 @@ public class LibraryController {
 
 	@DeleteMapping("/books")
 	public ResponseEntity<String> deleteBookById(@RequestBody Library library) {
-		Library toBeDeleted = repository.findById(library.getId()).get();
+		Library toBeDeleted = libraryService.findBookById(library.getId());
 		repository.delete(toBeDeleted);
 		return new ResponseEntity<>("Book is deleted", HttpStatus.OK);
 	}

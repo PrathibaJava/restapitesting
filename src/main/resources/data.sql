@@ -1,0 +1,2 @@
+INSERT INTO Library(book_name,id,isbn,aisle,author) values('Appium','fdsefr343','fdsefr3','43','Rahul');
+INSERT INTO Library(book_name,id,isbn,aisle,author) values('SpringBoot','abc123','abc','123','Shetty');
